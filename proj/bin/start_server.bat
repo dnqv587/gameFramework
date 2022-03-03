@@ -1,0 +1,1 @@
+E:\Study\program\code\project\moba\proj\x64\Debug\moba.exe ../../src/apps/lua_test/scripts/ main.lua

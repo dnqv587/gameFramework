@@ -1,0 +1,36 @@
+20220223 20:54:37 DEBUG ../../src/apps/lua_test/scripts/main.lua:15  
+start service
+20220223 20:58:27 DEBUG ../../src/apps/lua_test/scripts/main.lua:15  
+start service
+20220223 20:58:59 DEBUG ../../src/apps/lua_test/scripts/main.lua:15  
+start service
+20220223 20:59:14 WARNING E:\Study\program\code\project\moba\src\netbus\netbus.cpp:312  
+new client coming 
+20220223 21:16:03 ERROR trunk:0  
+../../src/apps/lua_test/scripts/main.lua:15: module 'cmd_name_map' not found:
+	no field package.preload['cmd_name_map']
+	no file 'E:\Study\program\code\project\moba\proj\x64\Debug\lua\cmd_name_map.lua'
+	no file 'E:\Study\program\code\project\moba\proj\x64\Debug\lua\cmd_name_map\init.lua'
+	no file 'E:\Study\program\code\project\moba\proj\x64\Debug\cmd_name_map.lua'
+	no file 'E:\Study\program\code\project\moba\proj\x64\Debug\cmd_name_map\init.lua'
+	no file 'E:\Study\program\code\project\moba\proj\x64\Debug\..\share\lua\5.3\cmd_name_map.lua'
+	no file 'E:\Study\program\code\project\moba\proj\x64\Debug\..\share\lua\5.3\cmd_name_map\init.lua'
+	no file '.\cmd_name_map.lua'
+	no file '.\cmd_name_map\init.lua'
+	no file 'C:\Program Files (x86)\Lua\5.1\lua\cmd_name_map.luac'
+	no file 'E:\Study\program\code\project\moba\proj\x64\Debug\cmd_name_map.dll'
+	no file 'E:\Study\program\code\project\moba\proj\x64\Debug\..\lib\lua\5.3\cmd_name_map.dll'
+	no file 'E:\Study\program\code\project\moba\proj\x64\Debug\loadall.dll'
+	no file '.\cmd_name_map.dll'
+20220223 21:18:54 DEBUG ../../src/apps/lua_test/scripts/main.lua:26  
+start service
+20220223 21:29:12 DEBUG ../../src/apps/lua_test/scripts/main.lua:26  
+start service
+20220223 21:31:48 DEBUG ../../src/apps/lua_test/scripts/main.lua:26  
+start service
+20220223 21:37:24 DEBUG ../../src/apps/lua_test/scripts/main.lua:26  
+start service
+20220223 21:38:52 WARNING E:\Study\program\code\project\moba\src\netbus\netbus.cpp:312  
+new client coming 
+20220223 21:39:00 DEBUG E:\Study\program\code\project\moba\src\netbus\netbus.cpp:254  
+client shutdown 

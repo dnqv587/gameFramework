@@ -1,0 +1,403 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="3rd">
+      <UniqueIdentifier>{2e9f4bc2-cae8-4bfe-9fc7-81bcc9e39271}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="3rd\libuv">
+      <UniqueIdentifier>{eaa52744-369d-4129-acac-44be167ddec0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="3rd\http_parser">
+      <UniqueIdentifier>{c9993fcc-bfde-4065-bedf-d206e043753d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="3rd\libuv\include">
+      <UniqueIdentifier>{71908828-e6df-48cd-a6b2-a0f962f0a27c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="3rd\libuv\src">
+      <UniqueIdentifier>{d0128976-ce1b-458f-a2d6-86ca19d5d705}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="3rd\libuv\src\win">
+      <UniqueIdentifier>{3aac5bbf-7049-475d-9291-02f258e3f822}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="3rd\jsoncpp">
+      <UniqueIdentifier>{70367e2e-1ed4-4e37-b339-08fc2acee727}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="3rd\jsoncpp\include">
+      <UniqueIdentifier>{55614a35-3f90-4b77-ac0d-a28b600ac438}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="3rd\jsoncpp\src">
+      <UniqueIdentifier>{5785f7ca-dd97-4146-abc9-c86a4c4de192}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="3rd\jsoncpp\include\json">
+      <UniqueIdentifier>{87b24ade-9dda-4267-ab56-d1227097ddd8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="3rd\jsoncpp\src\lib_json">
+      <UniqueIdentifier>{56835c89-a6b7-4e86-8093-c4ecf1bfaa14}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\crypto">
+      <UniqueIdentifier>{d34d4d53-f463-465e-873b-93b65e8c13f7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\crypto">
+      <UniqueIdentifier>{e1902688-b9fb-438b-94c4-a11d81767fa6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\proto">
+      <UniqueIdentifier>{e08bd06c-607e-435b-8835-8c455ba348f2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\test">
+      <UniqueIdentifier>{f17fdf66-6294-4683-8a13-336fe88f8ad7}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="win_sock.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="mysql.cpp">
+      <Filter>源文件</Filter>
+    </ClInclude>
+    <ClInclude Include="libuv.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\3rd\http_parser\http_parser.h">
+      <Filter>3rd\http_parser</Filter>
+    </ClInclude>
+    <ClInclude Include="http.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\3rd\libuv\include\android-ifaddrs.h">
+      <Filter>3rd\libuv\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\3rd\libuv\include\pthread-barrier.h">
+      <Filter>3rd\libuv\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\3rd\libuv\include\stdint-msvc2008.h">
+      <Filter>3rd\libuv\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\3rd\libuv\include\tree.h">
+      <Filter>3rd\libuv\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\3rd\libuv\include\uv.h">
+      <Filter>3rd\libuv\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\3rd\libuv\include\uv-aix.h">
+      <Filter>3rd\libuv\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\3rd\libuv\include\uv-bsd.h">
+      <Filter>3rd\libuv\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\3rd\libuv\include\uv-darwin.h">
+      <Filter>3rd\libuv\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\3rd\libuv\include\uv-errno.h">
+      <Filter>3rd\libuv\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\3rd\libuv\include\uv-linux.h">
+      <Filter>3rd\libuv\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\3rd\libuv\include\uv-sunos.h">
+      <Filter>3rd\libuv\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\3rd\libuv\include\uv-threadpool.h">
+      <Filter>3rd\libuv\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\3rd\libuv\include\uv-unix.h">
+      <Filter>3rd\libuv\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\3rd\libuv\include\uv-version.h">
+      <Filter>3rd\libuv\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\3rd\libuv\include\uv-win.h">
+      <Filter>3rd\libuv\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\3rd\libuv\src\win\atomicops-inl.h">
+      <Filter>3rd\libuv\src\win</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\3rd\libuv\src\win\handle-inl.h">
+      <Filter>3rd\libuv\src\win</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\3rd\libuv\src\win\internal.h">
+      <Filter>3rd\libuv\src\win</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\3rd\libuv\src\win\req-inl.h">
+      <Filter>3rd\libuv\src\win</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\3rd\libuv\src\win\stream-inl.h">
+      <Filter>3rd\libuv\src\win</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\3rd\libuv\src\win\winapi.h">
+      <Filter>3rd\libuv\src\win</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\3rd\libuv\src\win\winsock.h">
+      <Filter>3rd\libuv\src\win</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\3rd\libuv\src\heap-inl.h">
+      <Filter>3rd\libuv\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\3rd\libuv\src\queue.h">
+      <Filter>3rd\libuv\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\3rd\libuv\src\uv-common.h">
+      <Filter>3rd\libuv\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\3rd\jsoncpp\include\json\allocator.h">
+      <Filter>3rd\jsoncpp\include\json</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\3rd\jsoncpp\include\json\assertions.h">
+      <Filter>3rd\jsoncpp\include\json</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\3rd\jsoncpp\include\json\config.h">
+      <Filter>3rd\jsoncpp\include\json</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\3rd\jsoncpp\include\json\forwards.h">
+      <Filter>3rd\jsoncpp\include\json</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\3rd\jsoncpp\include\json\json.h">
+      <Filter>3rd\jsoncpp\include\json</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\3rd\jsoncpp\include\json\json_features.h">
+      <Filter>3rd\jsoncpp\include\json</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\3rd\jsoncpp\include\json\reader.h">
+      <Filter>3rd\jsoncpp\include\json</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\3rd\jsoncpp\include\json\value.h">
+      <Filter>3rd\jsoncpp\include\json</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\3rd\jsoncpp\include\json\version.h">
+      <Filter>3rd\jsoncpp\include\json</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\3rd\jsoncpp\include\json\writer.h">
+      <Filter>3rd\jsoncpp\include\json</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\3rd\jsoncpp\src\lib_json\json_tool.h">
+      <Filter>3rd\jsoncpp\src\lib_json</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\crypto\Aes.h">
+      <Filter>头文件\crypto</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\crypto\Hash.h">
+      <Filter>头文件\crypto</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\crypto\Rsa.h">
+      <Filter>头文件\crypto</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\crypto\Base64.h">
+      <Filter>头文件\crypto</Filter>
+    </ClInclude>
+    <ClInclude Include="redis.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="person.pb.h">
+      <Filter>头文件\proto</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\netbus\tcp_protocol.h">
+      <Filter>源文件\test</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\apps\test\proto\game.pb.h">
+      <Filter>源文件\test</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\utils\cache_alloc.h">
+      <Filter>源文件\test</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\netbus\session.h">
+      <Filter>源文件\test</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\netbus\session_uv.h">
+      <Filter>源文件\test</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\netbus\netbus.h">
+      <Filter>源文件\test</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\netbus\proto_man.h">
+      <Filter>源文件\test</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\netbus\ws_protocol.h">
+      <Filter>源文件\test</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\crypto\Sha1.h">
+      <Filter>源文件\crypto</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="win_sock.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="libuv.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rd\http_parser\http_parser.c">
+      <Filter>3rd\http_parser</Filter>
+    </ClCompile>
+    <ClCompile Include="http.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rd\libuv\src\win\async.c">
+      <Filter>3rd\libuv\src\win</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rd\libuv\src\win\core.c">
+      <Filter>3rd\libuv\src\win</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rd\libuv\src\win\dl.c">
+      <Filter>3rd\libuv\src\win</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rd\libuv\src\win\error.c">
+      <Filter>3rd\libuv\src\win</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rd\libuv\src\win\fs.c">
+      <Filter>3rd\libuv\src\win</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rd\libuv\src\win\fs-event.c">
+      <Filter>3rd\libuv\src\win</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rd\libuv\src\win\getaddrinfo.c">
+      <Filter>3rd\libuv\src\win</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rd\libuv\src\win\getnameinfo.c">
+      <Filter>3rd\libuv\src\win</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rd\libuv\src\win\handle.c">
+      <Filter>3rd\libuv\src\win</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rd\libuv\src\win\loop-watcher.c">
+      <Filter>3rd\libuv\src\win</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rd\libuv\src\win\pipe.c">
+      <Filter>3rd\libuv\src\win</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rd\libuv\src\win\poll.c">
+      <Filter>3rd\libuv\src\win</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rd\libuv\src\win\process.c">
+      <Filter>3rd\libuv\src\win</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rd\libuv\src\win\process-stdio.c">
+      <Filter>3rd\libuv\src\win</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rd\libuv\src\win\req.c">
+      <Filter>3rd\libuv\src\win</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rd\libuv\src\win\signal.c">
+      <Filter>3rd\libuv\src\win</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rd\libuv\src\win\snprintf.c">
+      <Filter>3rd\libuv\src\win</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rd\libuv\src\win\stream.c">
+      <Filter>3rd\libuv\src\win</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rd\libuv\src\win\tcp.c">
+      <Filter>3rd\libuv\src\win</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rd\libuv\src\win\thread.c">
+      <Filter>3rd\libuv\src\win</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rd\libuv\src\win\timer.c">
+      <Filter>3rd\libuv\src\win</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rd\libuv\src\win\tty.c">
+      <Filter>3rd\libuv\src\win</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rd\libuv\src\win\udp.c">
+      <Filter>3rd\libuv\src\win</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rd\libuv\src\win\util.c">
+      <Filter>3rd\libuv\src\win</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rd\libuv\src\win\winapi.c">
+      <Filter>3rd\libuv\src\win</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rd\libuv\src\win\winsock.c">
+      <Filter>3rd\libuv\src\win</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rd\libuv\src\fs-poll.c">
+      <Filter>3rd\libuv\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rd\libuv\src\inet.c">
+      <Filter>3rd\libuv\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rd\libuv\src\threadpool.c">
+      <Filter>3rd\libuv\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rd\libuv\src\uv-common.c">
+      <Filter>3rd\libuv\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rd\libuv\src\version.c">
+      <Filter>3rd\libuv\src</Filter>
+    </ClCompile>
+    <ClCompile Include="websocket.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rd\jsoncpp\src\lib_json\json_reader.cpp">
+      <Filter>3rd\jsoncpp\src\lib_json</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rd\jsoncpp\src\lib_json\json_value.cpp">
+      <Filter>3rd\jsoncpp\src\lib_json</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rd\jsoncpp\src\lib_json\json_writer.cpp">
+      <Filter>3rd\jsoncpp\src\lib_json</Filter>
+    </ClCompile>
+    <ClCompile Include="http_server.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="redis.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rd\redis\include\win32fixes.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="libuv_workQueue.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="person.pb.cc">
+      <Filter>头文件\proto</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\netbus\tcp_protocol.cpp">
+      <Filter>源文件\test</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\apps\test\proto\game.pb.cc">
+      <Filter>源文件\test</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\utils\cache.c">
+      <Filter>源文件\test</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\netbus\session_uv.cpp">
+      <Filter>源文件\test</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\netbus\netbus.cpp">
+      <Filter>源文件\test</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\netbus\proto_man.cpp">
+      <Filter>源文件\test</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\netbus\ws_protocol.cpp">
+      <Filter>源文件\test</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\crypto\Base64.cpp">
+      <Filter>源文件\crypto</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\crypto\Sha1.cpp">
+      <Filter>源文件\crypto</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\3rd\jsoncpp\src\lib_json\json_valueiterator.inl">
+      <Filter>3rd\jsoncpp\src\lib_json</Filter>
+    </None>
+  </ItemGroup>
+</Project>

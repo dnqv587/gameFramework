@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>16.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{c61fb238-fd27-420b-894e-041b7c2f9cdc}</ProjectGuid>
+    <RootNamespace>test</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0.19041.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>false</SDLCheck>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;WIN32;_CRT_SECURE_NO_WARNINGS;_CRT_NONSTDC_NO_DEPRECATE;PROTOBUF_USE_DLLS;NOMINMAX;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>E:\Study\program\code\project\moba\3rd\redis\include;E:\Study\program\code\project\moba\3rd\openssl\x64\include;E:\Study\program\code\project\moba\3rd\libuv\include;E:\Study\program\code\project\moba\3rd\protobuf\include;E:\Study\program\code\project\moba\proj\mysql\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>E:\Study\program\code\project\moba\3rd\protobuf\lib\x64;E:\Study\program\code\project\moba\3rd\redis\lib\x64\Debug;E:\Study\program\code\project\moba\3rd\openssl\x64\lib;E:\Study\program\code\project\moba\proj\mysql\lib\vs14;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>libcrypto.lib;hiredis.lib;Win32_Interop.lib;ws2_32.lib;Advapi32.lib;Iphlpapi.lib;Psapi.lib;user32.lib;userenv.lib;libprotobufd.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\3rd\http_parser\http_parser.h" />
+    <ClInclude Include="..\..\3rd\jsoncpp\include\json\allocator.h" />
+    <ClInclude Include="..\..\3rd\jsoncpp\include\json\assertions.h" />
+    <ClInclude Include="..\..\3rd\jsoncpp\include\json\config.h" />
+    <ClInclude Include="..\..\3rd\jsoncpp\include\json\forwards.h" />
+    <ClInclude Include="..\..\3rd\jsoncpp\include\json\json.h" />
+    <ClInclude Include="..\..\3rd\jsoncpp\include\json\json_features.h" />
+    <ClInclude Include="..\..\3rd\jsoncpp\include\json\reader.h" />
+    <ClInclude Include="..\..\3rd\jsoncpp\include\json\value.h" />
+    <ClInclude Include="..\..\3rd\jsoncpp\include\json\version.h" />
+    <ClInclude Include="..\..\3rd\jsoncpp\include\json\writer.h" />
+    <ClInclude Include="..\..\3rd\jsoncpp\src\lib_json\json_tool.h" />
+    <ClInclude Include="..\..\3rd\libuv\include\android-ifaddrs.h" />
+    <ClInclude Include="..\..\3rd\libuv\include\pthread-barrier.h" />
+    <ClInclude Include="..\..\3rd\libuv\include\stdint-msvc2008.h" />
+    <ClInclude Include="..\..\3rd\libuv\include\tree.h" />
+    <ClInclude Include="..\..\3rd\libuv\include\uv-aix.h" />
+    <ClInclude Include="..\..\3rd\libuv\include\uv-bsd.h" />
+    <ClInclude Include="..\..\3rd\libuv\include\uv-darwin.h" />
+    <ClInclude Include="..\..\3rd\libuv\include\uv-errno.h" />
+    <ClInclude Include="..\..\3rd\libuv\include\uv-linux.h" />
+    <ClInclude Include="..\..\3rd\libuv\include\uv-sunos.h" />
+    <ClInclude Include="..\..\3rd\libuv\include\uv-threadpool.h" />
+    <ClInclude Include="..\..\3rd\libuv\include\uv-unix.h" />
+    <ClInclude Include="..\..\3rd\libuv\include\uv-version.h" />
+    <ClInclude Include="..\..\3rd\libuv\include\uv-win.h" />
+    <ClInclude Include="..\..\3rd\libuv\include\uv.h" />
+    <ClInclude Include="..\..\3rd\libuv\src\heap-inl.h" />
+    <ClInclude Include="..\..\3rd\libuv\src\queue.h" />
+    <ClInclude Include="..\..\3rd\libuv\src\uv-common.h" />
+    <ClInclude Include="..\..\3rd\libuv\src\win\atomicops-inl.h" />
+    <ClInclude Include="..\..\3rd\libuv\src\win\handle-inl.h" />
+    <ClInclude Include="..\..\3rd\libuv\src\win\internal.h" />
+    <ClInclude Include="..\..\3rd\libuv\src\win\req-inl.h" />
+    <ClInclude Include="..\..\3rd\libuv\src\win\stream-inl.h" />
+    <ClInclude Include="..\..\3rd\libuv\src\win\winapi.h" />
+    <ClInclude Include="..\..\3rd\libuv\src\win\winsock.h" />
+    <ClInclude Include="..\..\src\apps\test\proto\game.pb.h" />
+    <ClInclude Include="..\..\src\crypto\Aes.h" />
+    <ClInclude Include="..\..\src\crypto\Base64.h" />
+    <ClInclude Include="..\..\src\crypto\Hash.h" />
+    <ClInclude Include="..\..\src\crypto\Rsa.h" />
+    <ClInclude Include="..\..\src\crypto\Sha1.h" />
+    <ClInclude Include="..\..\src\netbus\netbus.h" />
+    <ClInclude Include="..\..\src\netbus\proto_man.h" />
+    <ClInclude Include="..\..\src\netbus\session.h" />
+    <ClInclude Include="..\..\src\netbus\session_uv.h" />
+    <ClInclude Include="..\..\src\netbus\tcp_protocol.h" />
+    <ClInclude Include="..\..\src\netbus\ws_protocol.h" />
+    <ClInclude Include="..\..\src\utils\cache_alloc.h" />
+    <ClInclude Include="http.h" />
+    <ClInclude Include="libuv.h" />
+    <ClInclude Include="mysql.cpp" />
+    <ClInclude Include="person.pb.h" />
+    <ClInclude Include="protobuf.h" />
+    <ClInclude Include="redis.h" />
+    <ClInclude Include="win_sock.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\3rd\http_parser\http_parser.c" />
+    <ClCompile Include="..\..\3rd\jsoncpp\src\lib_json\json_reader.cpp" />
+    <ClCompile Include="..\..\3rd\jsoncpp\src\lib_json\json_value.cpp" />
+    <ClCompile Include="..\..\3rd\jsoncpp\src\lib_json\json_writer.cpp" />
+    <ClCompile Include="..\..\3rd\libuv\src\fs-poll.c" />
+    <ClCompile Include="..\..\3rd\libuv\src\inet.c" />
+    <ClCompile Include="..\..\3rd\libuv\src\threadpool.c" />
+    <ClCompile Include="..\..\3rd\libuv\src\uv-common.c" />
+    <ClCompile Include="..\..\3rd\libuv\src\version.c" />
+    <ClCompile Include="..\..\3rd\libuv\src\win\async.c" />
+    <ClCompile Include="..\..\3rd\libuv\src\win\core.c" />
+    <ClCompile Include="..\..\3rd\libuv\src\win\dl.c" />
+    <ClCompile Include="..\..\3rd\libuv\src\win\error.c" />
+    <ClCompile Include="..\..\3rd\libuv\src\win\fs-event.c" />
+    <ClCompile Include="..\..\3rd\libuv\src\win\fs.c" />
+    <ClCompile Include="..\..\3rd\libuv\src\win\getaddrinfo.c" />
+    <ClCompile Include="..\..\3rd\libuv\src\win\getnameinfo.c" />
+    <ClCompile Include="..\..\3rd\libuv\src\win\handle.c" />
+    <ClCompile Include="..\..\3rd\libuv\src\win\loop-watcher.c" />
+    <ClCompile Include="..\..\3rd\libuv\src\win\pipe.c" />
+    <ClCompile Include="..\..\3rd\libuv\src\win\poll.c" />
+    <ClCompile Include="..\..\3rd\libuv\src\win\process-stdio.c" />
+    <ClCompile Include="..\..\3rd\libuv\src\win\process.c" />
+    <ClCompile Include="..\..\3rd\libuv\src\win\req.c" />
+    <ClCompile Include="..\..\3rd\libuv\src\win\signal.c" />
+    <ClCompile Include="..\..\3rd\libuv\src\win\snprintf.c" />
+    <ClCompile Include="..\..\3rd\libuv\src\win\stream.c" />
+    <ClCompile Include="..\..\3rd\libuv\src\win\tcp.c" />
+    <ClCompile Include="..\..\3rd\libuv\src\win\thread.c" />
+    <ClCompile Include="..\..\3rd\libuv\src\win\timer.c" />
+    <ClCompile Include="..\..\3rd\libuv\src\win\tty.c" />
+    <ClCompile Include="..\..\3rd\libuv\src\win\udp.c" />
+    <ClCompile Include="..\..\3rd\libuv\src\win\util.c" />
+    <ClCompile Include="..\..\3rd\libuv\src\win\winapi.c" />
+    <ClCompile Include="..\..\3rd\libuv\src\win\winsock.c" />
+    <ClCompile Include="..\..\3rd\redis\include\win32fixes.c" />
+    <ClCompile Include="..\..\src\apps\test\proto\game.pb.cc" />
+    <ClCompile Include="..\..\src\crypto\Base64.cpp" />
+    <ClCompile Include="..\..\src\crypto\Sha1.cpp" />
+    <ClCompile Include="..\..\src\netbus\netbus.cpp" />
+    <ClCompile Include="..\..\src\netbus\proto_man.cpp" />
+    <ClCompile Include="..\..\src\netbus\session_uv.cpp" />
+    <ClCompile Include="..\..\src\netbus\tcp_protocol.cpp" />
+    <ClCompile Include="..\..\src\netbus\ws_protocol.cpp" />
+    <ClCompile Include="..\..\src\utils\cache.c" />
+    <ClCompile Include="http.cpp" />
+    <ClCompile Include="http_server.cpp" />
+    <ClCompile Include="libuv.cpp" />
+    <ClCompile Include="libuv_workQueue.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="person.pb.cc" />
+    <ClCompile Include="protobuf.cpp" />
+    <ClCompile Include="redis.cpp" />
+    <ClCompile Include="websocket.cpp" />
+    <ClCompile Include="win_sock.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\3rd\jsoncpp\src\lib_json\json_valueiterator.inl" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
