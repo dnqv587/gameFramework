@@ -140,7 +140,7 @@ session_uv* session_uv::create()
 	//session_uv* uv_s = new session_uv();
 	//内存池动态管理
 	session_uv* uv_s = (session_uv*)cache_alloc(session_allocer, sizeof(session_uv));
-	uv_s->session_uv::session_uv();
+	//uv_s->session_uv::session_uv();
 	uv_s->init();
 	return uv_s;
 }

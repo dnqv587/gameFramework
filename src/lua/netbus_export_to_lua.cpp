@@ -21,7 +21,7 @@ extern "C" {
 static int lua_tcp_listen (lua_State* tolua_S) {
 	int argc = lua_gettop (tolua_S);
 	if (argc != 1){
-		goto lua_failed;
+		return 0;
 	}
 
 	int port = lua_tointeger (tolua_S , 1);
@@ -34,27 +34,25 @@ lua_failed :
 static int lua_ws_listen (lua_State* tolua_S) {
 	int argc = lua_gettop (tolua_S);
 	if (argc != 1){
-		goto lua_failed;
+		return 0;
 	}
 
 	int port = lua_tointeger (tolua_S, 1);
 	netbus::instance ()->ws_listen (port);
 
-lua_failed:
-	return 0;
+return 0;
 }
 
 static int lua_udp_listen (lua_State* tolua_S) {
 	int argc = lua_gettop (tolua_S);
 	if (argc != 1){
-		goto lua_failed;
+		return 0;
 	}
 
 	int port = lua_tointeger (tolua_S, 1);
 	netbus::instance ()->udp_listen (port);
 
-lua_failed:
-	return 0;
+return 0;
 }
 
 static void connect_cb(int err, session* s, void* udata) {
@@ -73,19 +71,18 @@ static void connect_cb(int err, session* s, void* udata) {
 static int lua_tcp_connect (lua_State* tolua_S) {
 	const char* ip = lua_tostring (tolua_S ,1);
 	if (ip == NULL){
-		goto lua_failed;
+		return 0;
 	}
 	int port = lua_tointeger (tolua_S , 2);
 
 	int handler = toluafix_ref_function (tolua_S,3,0);
 	if (handler == 0){
-		goto lua_failed;
+		return 0;
 	}
 	
 	netbus::instance ()->tcp_connect (ip, port, connect_cb, (void*)handler);
 	return 0;
-lua_failed:
-	return 0;
+return 0;
 }
 
 int register_netbus_export (lua_State* tolua_S) {

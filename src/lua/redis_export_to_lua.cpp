@@ -26,27 +26,25 @@ static void on_open_cb(const char* err, void* context, void* udata)
 		tolua_pushuserdata(lua_wrapper::get_luaState(), context);
 	}
 
-	lua_wrapper::execute_script_Handle((int)udata, 2);
-	lua_wrapper::remove_script_Handle((int)udata);
+	lua_wrapper::execute_script_Handle(reinterpret_cast<long>(udata), 2);
+	lua_wrapper::remove_script_Handle(reinterpret_cast<long>(udata));
 }
 
 static int lua_redis_connect(lua_State* tolua_S)
 {
 	char* ip = (char*)tolua_tostring(tolua_S, 1, 0);
 	if (ip == NULL){
-		goto lua_failed;
+		return 0;
 	}
 
 	int port = (int)tolua_tonumber(tolua_S, 2, 0);
 
 	int handle = toluafix_ref_function(tolua_S, 3, 0);
 	if (handle == NULL){
-		goto lua_failed;
+		return 0;
 	}
 	redis_wrapper::connect(ip, port, on_open_cb, (void*)handle);
 
-lua_failed:
-	return 0;
 }
 
 static int lua_redis_close(lua_State* tolua_S)
@@ -102,30 +100,30 @@ static void on_query_cb(const char* err, redisReply* result, void* udata)
 		
 	}
 
-	lua_wrapper::execute_script_Handle((int)udata, 2);
-	lua_wrapper::remove_script_Handle((int)udata);
+	lua_wrapper::execute_script_Handle(reinterpret_cast<long>(udata), 2);
+	lua_wrapper::remove_script_Handle(reinterpret_cast<long>(udata));
 }
 
 static int lua_redis_query(lua_State* tolua_S)
 {
 	void* context = tolua_touserdata(tolua_S, 1, 0);
 	if (!context){
-		goto lua_failed;
+		return 0;
 	}
 
 	char* sql = (char*)tolua_tostring(tolua_S, 2, 0);
 	if (sql == NULL){
-		goto lua_failed;
+		return 0;
 	}
 
 	int handle = toluafix_ref_function(tolua_S, 3, 0);
 	if (handle == 0){
-		goto lua_failed;
+		return 0;
 	}
 
 	redis_wrapper::query(context, sql, on_query_cb, (void*)handle);
 
-lua_failed:
+
 	return 0;
 }
 

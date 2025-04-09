@@ -48,17 +48,29 @@ static	void on_lua_repeat_timer (void* udata) {
 static int lua_schedule_repeat (lua_State* tolua_S) {
 	int handler = toluafix_ref_function (tolua_S,1,0);
 	if (NULL == handler){
-		goto lua_failed;
+		if (NULL != handler){
+			lua_wrapper::remove_script_Handle (handler);
+		}
+		lua_pushnil (tolua_S);
+		return 1;
 	}
 
 	int after_msec = lua_tointeger (tolua_S,2);
 	if (after_msec <= 0){
-		goto lua_failed;
+		if (NULL != handler){
+			lua_wrapper::remove_script_Handle (handler);
+		}
+		lua_pushnil (tolua_S);
+		return 1;
 	}
 
 	int repeat_count = lua_tointeger (tolua_S, 3);
 	if (repeat_count == 0){
-		goto lua_failed;
+		if (NULL != handler){
+			lua_wrapper::remove_script_Handle (handler);
+		}
+		lua_pushnil (tolua_S);
+		return 1;
 	}
 	if (repeat_count < 0){
 		repeat_count = -1;
@@ -90,12 +102,14 @@ static int lua_schedule_once (lua_State* tolua_S) {
 
 	int handler = toluafix_ref_function (tolua_S, 1, 0);
 	if (NULL == handler){
-		goto lua_failed;
+		lua_pushnil (tolua_S);
+		return 1;
 	}
 
 	int after_msec = lua_tointeger (tolua_S, 2);
 	if (after_msec <= 0){
-		goto lua_failed;
+		lua_pushnil (tolua_S);
+		return 1;
 	}
 	struct repeat_data* rd = (struct repeat_data*)my_malloc (sizeof(struct repeat_data));
 	rd->handler = handler;
@@ -105,17 +119,13 @@ static int lua_schedule_once (lua_State* tolua_S) {
 	tolua_pushuserdata (tolua_S, time_t);
 
 	return 1;
-
-lua_failed:
-	lua_pushnil (tolua_S);
-	return 1;
 }
 
 
 
 static int lua_cancel_timer (lua_State* tolua_S) {
 	if (!lua_istable (tolua_S, 1)){
-		goto lua_failed;
+		return 0;
 	}
 
 	struct timer* t = (struct timer*)lua_touserdata (tolua_S, 1);
@@ -123,8 +133,6 @@ static int lua_cancel_timer (lua_State* tolua_S) {
 	lua_wrapper::remove_script_Handle (rd->handler);
 	my_free (rd);
 	cancel_timer (t);
-lua_failed:
-	return 0;
 }
 
 int register_scheduler_export (lua_State* tolua_S) {

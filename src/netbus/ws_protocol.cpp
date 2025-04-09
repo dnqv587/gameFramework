@@ -142,9 +142,9 @@ bool ws_protocol::read_ws_header(unsigned char* recv_data, int recv_len, int* pk
 		{
 			return false;
 		}
-		unsigned char netLen[8];
-		memcpy(netLen, (void*)recv_data[2], 8);
-		data_len = ntohs((u_short)netLen);
+		u_short netLen;
+		memcpy(&netLen, reinterpret_cast<void *>(recv_data[2]), 8);
+		data_len = ntohs(netLen);
 		
 	}
 

@@ -30,8 +30,8 @@ static void on_open_cb(const char* err, void* Conn, void* udata)
 	}
 	//end
 
-	lua_wrapper::execute_script_Handle((int)udata,2);
-	lua_wrapper::remove_script_Handle((int)udata);
+	lua_wrapper::execute_script_Handle(reinterpret_cast<long>(udata),2);
+	lua_wrapper::remove_script_Handle(reinterpret_cast<long>(udata));
 }
 
 static int lua_mysql_connect(lua_State* tolua_S)
@@ -39,34 +39,34 @@ static int lua_mysql_connect(lua_State* tolua_S)
 	//获得参数--begin
 	char* ip = (char*)tolua_tostring(tolua_S,1,0);
 	if (ip == NULL){
-		goto lua_failed;
+		return 0;
 	}
 
 	int port = (int)tolua_tonumber(tolua_S,2,0);
 
 	char* db_name = (char*)tolua_tostring(tolua_S, 3, 0);
 	if (db_name == NULL){
-		goto lua_failed;
+		return 0;
 	}
 
 	char* uname = (char*)tolua_tostring(tolua_S,4,0);
 	if (uname == NULL){
-		goto lua_failed;
+		return 0;
 	}
 
 	char* upwd = (char*)tolua_tostring(tolua_S ,5,0);
 	if (upwd == NULL){
-		goto lua_failed;
+		return 0;
 	}
 	int handle = toluafix_ref_function(tolua_S,6,0);
 	if (handle == 0){
-		goto lua_failed;
+		return 0;
 	}
 	//end
 
 	mysql_wrapper::connect(ip, port, db_name, uname, upwd, on_open_cb, (void*)handle);
 
-lua_failed:
+
 	return 0;
 }
 static int lua_mysql_close(lua_State* tolua_S)
@@ -132,22 +132,22 @@ static int lua_mysql_query(lua_State* tolua_S)
 {
 	void* Conn = tolua_touserdata(tolua_S, 1, 0);
 	if (!Conn){
-		goto lua_failed;
+		return 0;
 	}
 
 	char* sql = (char*)tolua_tostring(tolua_S,2,0);
 	if (sql == NULL){
-		goto lua_failed;
+		return 0;
 	}
 
 	int handle = toluafix_ref_function(tolua_S, 3, 0);
 	if (handle == 0){
-		goto lua_failed;
+		return 0;
 	}
 
 	mysql_wrapper::query(Conn, sql, on_lua_query_cb, (void*)handle);
 
-lua_failed:
+
 	return 0;
 }
 

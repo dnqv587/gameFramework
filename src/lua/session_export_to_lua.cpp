@@ -24,82 +24,76 @@ extern "C" {
 static int lua_session_close (lua_State* tolua_S) {
 	session* s = (session*)tolua_touserdata (tolua_S, 1, 0);
 	if (NULL == s){
-		goto lua_failed;
+		return 0;
 	}
 	s->close ();
 
 	return 0;
-lua_failed:
-	return 0;
+return 0;
 }
 
 static int lua_set_utag (lua_State* tolua_S) {
 	session* s = (session*)tolua_touserdata (tolua_S, 1, 0);
 	if (NULL == s){
-		goto lua_failed;
+		return 0;
 	}
 
 	unsigned int utag = lua_tointeger (tolua_S,2);
 	s->utag = utag;
 	
-lua_failed:
-	return 0;
+return 0;
 }
 
 static int lua_get_utag (lua_State* tolua_S) {
 	session* s = (session*)tolua_touserdata (tolua_S, 1, 0);
 	if (NULL == s){
-		goto lua_failed;
+		return 0;
 	}
 
 	lua_pushinteger (tolua_S,s->utag);
 	return 1;
 
-lua_failed:
-	return 0;
+return 0;
 }
 
 static int lua_set_uid (lua_State* tolua_S) {
 	session* s = (session*)tolua_touserdata (tolua_S, 1, 0);
 	if (NULL == s){
-		goto lua_failed;
+		return 0;
 	}
 
 	unsigned int uid = lua_tointeger (tolua_S, 2);
 	s->uid = uid;
 
-lua_failed:
-	return 0;
+return 0;
 }
 
 static int lua_get_uid (lua_State* tolua_S) {
 	session* s = (session*)tolua_touserdata (tolua_S, 1, 0);
 	if (NULL == s){
-		goto lua_failed;
+		return 0;
 	}
 
 	lua_pushinteger (tolua_S, s->uid);
 	return 1;
 
-lua_failed:
-	return 0;
+return 0;
 }
 
 static int lua_as_client (lua_State* tolua_S) {
 	session* s = (session*)tolua_touserdata (tolua_S, 1, NULL);
 	if (NULL == s){
-		goto lua_failed;
+		return 0;
 	}
 	lua_pushinteger (tolua_S ,s->as_client);
 	return 1;
-lua_failed:
-	return 0;
+return 0;
 }
 
 static int lua_get_address (lua_State* tolua_S) {
 	session* s = (session*)tolua_touserdata (tolua_S, 1, 0);
 	if (NULL == s){
-		goto lua_failed;
+		return 0;
 	}
 	int client_port;
 	const char* ip = s->get_address (&client_port);
@@ -107,8 +101,7 @@ static int lua_get_address (lua_State* tolua_S) {
 	lua_pushstring (tolua_S, ip);
 	lua_pushinteger (tolua_S,client_port);
 	return 2;
-lua_failed:
-	return 0;
+return 0;
 }
 
 
@@ -131,7 +124,7 @@ static google::protobuf::Message* lua_table_to_protobuf(lua_State* L, int stack_
 	// 遍历table的所有key， 并且与 protobuf结构相比较。如果require的字段没有赋值， 报错！ 如果找不到字段，报错！
 	for (int32_t index = 0; index < descriptor->field_count(); ++index) {
 		const FieldDescriptor* fd = descriptor->field(index);
-		const string& name = fd->name();
+		const std::string& name = fd->name();
 
 		bool isRequired = fd->is_required();
 		bool bReapeted = fd->is_repeated();
@@ -338,18 +331,18 @@ static google::protobuf::Message* lua_table_to_protobuf(lua_State* L, int stack_
 static int lua_send_msg (lua_State* tolua_S) {
 	session* s = (session*)tolua_touserdata (tolua_S, 1, 0);
 	if (NULL == s){
-		goto lua_failed;
+		return 0;
 	}
 
 	if (!lua_istable(tolua_S,2)){
-		goto lua_failed;
+		return 0;
 	}
 
 	struct cmd_msg msg;
 
 	int n = luaL_len (tolua_S, 2);
 	if (n != 4){
-		goto lua_failed;
+		return 0;
 	}
 
 	lua_pushnumber (tolua_S, 1);
@@ -378,22 +371,20 @@ static int lua_send_msg (lua_State* tolua_S) {
 
 		proto_man::release_message ((google::protobuf::Message*)msg.body);
 	}
-lua_failed:
-	return 0;
+return 0;
 }
 
 static int lua_send_raw_cmd (lua_State* tolua_S) {
 	session* s = (session*)tolua_touserdata (tolua_S, 1, NULL);
 	if (NULL == s){
-		goto lua_failed;
+		return 0;
 	}
 
 	struct raw_msg* raw = (struct raw_msg*)tolua_touserdata (tolua_S,2,NULL);
 	s->send_raw_cmd (raw);
 	return 0;
 
-lua_failed:
-	return 0;
+return 0;
 }
 
 int register_session_export (lua_State* tolua_S) {

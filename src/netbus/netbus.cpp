@@ -312,7 +312,8 @@ extern "C"
 		uv_tcp_getpeername(client, (sockaddr*)&addr, &len);
 		uv_ip4_name(&addr, s->c_address, 32);
 		s->c_port = ntohs(addr.sin_port);
-		s->socket_type = (SockType)((int)server->data);
+		//memcpy(&s->socket_type,server->data,sizeof(SockType));
+		s->socket_type = static_cast<SockType>((int)server->data);
 		//std::cout << "new client coming " << s->c_address << ":" << s->c_port << std::endl;
 		log_warning("new client coming ", s->c_address, ":", s->c_port);
 

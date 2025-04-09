@@ -3,7 +3,7 @@
 #include <string>
 //Òì²½mysqlÄ£¿é
 
-#include <mysql.h>
+#include <mysql/mysql.h>
 class mysql_wrapper
 {
 public:

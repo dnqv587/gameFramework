@@ -204,17 +204,17 @@ int lua_logger_init (lua_State* L)
 {
 	const char* path = lua_tostring (L,1);
 	if (NULL == path){
-		goto lua_failed;
+		return 0;
 	}
 	const char* prefix = lua_tostring (L, 2);
 	if (NULL == prefix){
-		goto lua_failed;
+		return 0;
 	}
 
 	bool std_out = lua_toboolean (L, 3);
 
 	logger::init (path, prefix, std_out);
-lua_failed:
+
 	return 0;
 }
 

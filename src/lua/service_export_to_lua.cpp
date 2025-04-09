@@ -304,7 +304,7 @@ bool lua_service::on_session_recv_raw_cmd (session* s, struct raw_msg* msg)
 	//int argc = lua_gettop (lua_wrapper::lua_state());
 	//if (argc != 2){
 	//	printf ("argc is error !!!");
-	//	goto lua_failed;
+	//	return 0;
 	//}
 	lua_State* lua_state = lua_wrapper::get_luaState();
 	tolua_pushuserdata (lua_state, (void*)s);
@@ -385,7 +385,7 @@ static int lua_register_raw_service (lua_State* tolua_S) {
 	int stype = (int)tolua_tonumber (tolua_S, 1, 0);
 	bool ret = false;
 	if (!lua_istable (tolua_S, 2)){
-		goto lua_failed;
+		return 0;
 	}
 
 	unsigned int lua_recv_raw_Handler;
@@ -407,7 +407,6 @@ static int lua_register_raw_service (lua_State* tolua_S) {
 	//end
 	lua_pushboolean (tolua_S, ret ? 1 : 0);
 
-lua_failed:
 	return 1;
 }
 
@@ -417,7 +416,7 @@ static int lua_register_service (lua_State* tolua_S)
 	bool ret = false;
 	if (!lua_istable (tolua_S, 2))//参数2是否是table
 	{
-		goto lua_failed;
+		return 0;
 	}
 
 	unsigned int lua_recv_cmd_Handler;
@@ -440,7 +439,6 @@ static int lua_register_service (lua_State* tolua_S)
 	//push返回值
 	lua_pushboolean (tolua_S, ret ? 1 : 0);
 
-lua_failed:
 	return 1;
 }
 

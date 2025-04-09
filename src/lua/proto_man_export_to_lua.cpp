@@ -24,7 +24,7 @@ static int lua_register_protobuf_cmd_map (lua_State* tolua_S) {
 	std::map<int, std::string> cmd_map;
 	int n = luaL_len (tolua_S , 1);
 	if (n <= 0){
-		goto lua_failed;
+		return 0;
 	}
 	for (int i = 1; i <= n; i++)
 	{
@@ -43,22 +43,20 @@ lua_failed :
 
 static int lua_proto_type (lua_State* tolua_S) {
 	lua_pushinteger (tolua_S,proto_man::proto_type());
-lua_failed:
 	return 1;
 }
 
 static int lua_proto_man_init (lua_State* tolua_S) {
 	int argc = lua_gettop (tolua_S);
 	if (argc != 1){
-		goto lua_failed;
+		return 0;
 	}
 	int proto_type = lua_tointeger (tolua_S , 1);
 	if (proto_type != PROTO_JSON && proto_type != PROTO_BUF){
-		goto lua_failed;
+		return 0;
 	}
 	proto_man::init (proto_type);
-lua_failed:
-	return 0;
+return 0;
 }
 
 int register_proto_man_export (lua_State* tolua_S) {
@@ -84,25 +82,24 @@ void push_proto_message_tolua (const Message* message);
 static int lua_read_header (lua_State* tolua_S) {
 	int argc = lua_gettop (tolua_S);
 	if (argc != 1){
-		goto lua_failed;
+		return 0;
 	}
 	struct raw_msg* raw = (struct raw_msg*)tolua_touserdata (tolua_S,1,NULL);
 	lua_pushinteger (tolua_S, raw->stype);
 	lua_pushinteger (tolua_S, raw->ctype);
 	lua_pushinteger (tolua_S, raw->utag);
 	return 3;
-lua_failed:
-	return 0;
+return 0;
 }
 
 static int lua_read_body (lua_State* tolua_S) {
 	int argc = lua_gettop (tolua_S);
 	if (argc != 1){
-		goto lua_failed;
+		return 0;
 	}
 	struct raw_msg* raw = (struct raw_msg*)tolua_touserdata (tolua_S, 1, NULL);
 	if (raw == NULL){
-		goto lua_failed;
+		return 0;
 	}
 
 	cmd_msg* msg;
@@ -120,8 +117,7 @@ static int lua_read_body (lua_State* tolua_S) {
 	}
 	
 	return 1;
-lua_failed:
-	return 0;
+return 0;
 }
 
 
@@ -129,11 +125,11 @@ lua_failed:
 static int lua_set_utag (lua_State* tolua_S) {
 	int argc = lua_gettop (tolua_S);
 	if (argc != 2){
-		goto lua_failed;
+		return 0;
 	}
 	struct raw_msg* raw = (struct raw_msg*)tolua_touserdata (tolua_S, 1, NULL);
 	if (raw == NULL){
-		goto lua_failed;
+		return 0;
 	}
 	//int utag = tolua_tonumber (tolua_S, 2,NULL);
 	int utag = lua_tointeger (tolua_S, 2);
@@ -145,8 +141,7 @@ static int lua_set_utag (lua_State* tolua_S) {
 	utagPtr[2] = (utag & 0x00FF0000) >>16;
 	utagPtr[3] = (utag & 0xFF000000) >> 24;
 	return 0;
-lua_failed:
-	return 0;
+return 0;
 }
 
 int register_raw_cmd_export (lua_State* tolua_S) {
